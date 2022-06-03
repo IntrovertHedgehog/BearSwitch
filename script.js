@@ -10,8 +10,8 @@ function rgbToHex(r, g, b) {
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? 
-    `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})`
-   : null;
+  `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})`
+  : null;
 }
 
 let $background2 = "#F67280";
@@ -21,6 +21,14 @@ let $bearbody2 = "#8675A9";
 let $bearbody1 = "#91C788";
 
 let $bearmouth = "#F5F5F5";
+
+function getGreeting() {
+  let h = new Date().getHours();
+  if (6 <= h && h < 10) return 'chào buổi sáng 🐣';
+  if (10 <= h && h < 16) return 'bonne après-midi 🦔';
+  if (16 <= h && h < 21) return 'buổi chìu tốt lành 👽'
+  return 'ngủ ngon 🥹'
+}
 
 let kyniem = [
   'Ùkm!',
@@ -75,8 +83,8 @@ let kyniem = [
   'sợ bố lmh',
   'thích lmh',
   '...',
-  'anh chỉ muốn em vui',
-  'ngủ ngon'
+  'anh muốn lmh vui',
+  getGreeting()
 ]
 
 let kn = 0;
